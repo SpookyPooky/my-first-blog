@@ -7,17 +7,12 @@
       <h1><a href="/">Pooky Blog</a></h1>
     </div>
 
-    <div>
-      <p>This was published today.</p>
-      <h2><a href="">My first post</a></h2>
-      <p> Carpe diem, baby! I'm writing a quick little paragraph to seee what else is said.
-How does it look if I tab back over, like so? This is a paragaph.</p>
-    </div>
-
-    <div>
-      <p>published: samey samey.</p>
-      <h2><a href="">My second post</a></h2>
-      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-    </div>
+{% for post in posts %}
+  <div>
+    <p>published: {{ post.published_date }}</p>
+    <h1><a href="">{{ post.title }}</a><h1>
+    <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+{% endfor %}
   </body>
 </html>
